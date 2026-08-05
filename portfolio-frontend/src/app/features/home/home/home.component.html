@@ -1,13 +1,19 @@
 <nav class="navbar">
-  <a href="#hero" class="nav-pill">Inicio</a>
-  <a href="#sobre-mi" class="nav-pill">Sobre mí</a>
-  <a href="#proyectos" class="nav-pill">Proyectos</a>
-  <a href="#contacto" class="nav-pill">Contacto</a>
+  <div class="nav-links">
+    <a href="#hero" class="nav-link" [class.active]="activeSection === 'hero'">Inicio</a>
+    <a href="#sobre-mi" class="nav-link" [class.active]="activeSection === 'sobre-mi'">Sobre mí</a>
+    <a href="#proyectos" class="nav-link" [class.active]="activeSection === 'proyectos'">Proyectos</a>
+    <a href="#contacto" class="nav-link" [class.active]="activeSection === 'contacto'">Contacto</a>
+  </div>
 </nav>
 
 <section id="hero" class="section hero">
   <div class="overlay overlay-hero"></div>
   <div class="section-content">
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      Abierto a oportunidades
+    </div>
     <h1>Mateo Blanco</h1>
     <p class="subtitle">Software Engineering Student</p>
   </div>
@@ -16,7 +22,26 @@
 <section id="sobre-mi" class="section-dark">
   <div class="section-content">
 
-    <h2 class="section-title">Cómo pienso</h2>
+    <span class="section-kicker">Quién soy</span>
+
+    <div class="about-grid">
+      
+
+      <div class="about-text-block">
+        <p class="about-text">Soy estudiante de Licenciatura en Sistemas en ORT Uruguay. Actualmente estoy cursando el 3° año de la carrera. Me entusiasma ponerme desafios como es construir software, y mas aún si eso conlleva a resolver problemas reales. Me importa que funcione y que esté bien pensado desde el diseño hasta el código.</p>
+
+        <p class="about-text">Los proyectos académicos me enseñaron a trabajar en equipo. Lo considero fundamental en cualquier entorno. A poder adaptarte y que el código es solo una parte del trabajo. Aprendí a coordinar con otros, a discutir decisiones técnicas, a usar Git en equipo y a llegar a soluciones que no siempre son las que uno pensó solo.</p>
+
+        <p class="about-text">Me manejo con comodidad en C# • .NET • Angular • TypeScript • SQL. Son las tecnologías con las que más trabajé. Dicho eso, estoy completamente abierto a aprender nuevas herramientas — de eso se trata crecer como ingeniero. Lo que más me importa no es el stack en sí, sino la estrategia detrás del desarrollo: cómo se diseña la solución, qué decisiones se toman y por qué.</p>
+
+        <p class="about-text">Actualmente trabajo en OptionTelecom mientras curso la carrera. Busco una primera experiencia en desarrollo de software, part-time, donde pueda seguir creciendo dentro de un equipo.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <span class="section-kicker">Cómo pienso</span>
+
     <p class="section-subtitle">Transformar ideas en productos reales.</p>
     <div class="accordion-gallery">
 
@@ -50,11 +75,6 @@
       </div>
 
     </div>
-
-    <div class="divider"></div>
-
-    <h2 class="section-title">Sobre mí</h2>
-    <p class="about-text">Contenido próximamente.</p>
 
   </div>
 </section>
