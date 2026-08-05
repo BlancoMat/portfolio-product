@@ -1,83 +1,199 @@
-.hero {
-  position: relative;
-  min-height: 100vh;
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 100;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 0.75rem;
+}
+
+.nav-pill {
+  background: rgba(200, 200, 200, 0.25);
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  color: #111;
+  font-size: 0.85rem;
+  text-decoration: none;
 }
 
 .section {
   position: relative;
   min-height: 100vh;
+  background-image: url('/assets/images/desk-background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
-}
-
-.section-title {
-  position: relative;
-  z-index: 1;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  text-align: center;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.50);
 }
 
-.hero-content {
+.overlay-hero {
+  background: rgba(0, 0, 0, 0.40);
+}
+
+.section-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  color: white;
   padding: 2rem;
 }
 
-h1 {
-  font-size: 4rem;
+.hero {
+  align-items: flex-start;
+}
+
+.hero .section-content {
+  padding-top: 18vh;
+}
+
+.hero h1 {
+  font-size: 5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: 2px;
+  color: white;
 }
 
-.subtitle {
+.hero .subtitle {
   font-size: 1.3rem;
-  opacity: 0.85;
-  margin-bottom: 3rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.cards {
-  position: relative;
-  z-index: 1;
+.section-dark {
+  background: #0d1117;
+  min-height: 100vh;
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-}
+  padding: 6rem 2rem;
 
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  max-width: 280px;
-  text-align: left;
-  h3 {
-    font-size: 1rem;
-    font-weight: 600;
+  .section-content {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
     margin-bottom: 0.5rem;
   }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: rgba(255,255,255,0.15);
+    margin: 5rem auto;
+  }
+
+  .about-text {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+
+#proyectos, #contacto {
+  background: #0d1117;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+  }
+
   p {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    line-height: 1.5;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+  }
+}
+
+.accordion-gallery {
+  display: flex;
+  gap: 1rem;
+  height: 220px;
+  width: 100%;
+}
+
+.accordion-panel {
+  flex: 1;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
+  &.active {
+    flex: 4;
+
+    .panel-collapsed-title {
+      opacity: 0;
+    }
+
+    .panel-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .panel-collapsed-title {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    white-space: normal;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .panel-content {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+    padding: 1.75rem;
+    text-align: left;
+    color: white;
+    overflow-y: auto;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: white;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+    }
   }
 }

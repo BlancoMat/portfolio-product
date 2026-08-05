@@ -1,26 +1,74 @@
-<div class="hero">
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <h1>Mateo Blanco</h1>
-    <p class="subtitle">Full Stack Developer · .NET & Angular</p>
-  </div>
-</div>
+<nav class="navbar">
+  <a href="#hero" class="nav-pill">Inicio</a>
+  <a href="#sobre-mi" class="nav-pill">Sobre mí</a>
+  <a href="#proyectos" class="nav-pill">Proyectos</a>
+  <a href="#contacto" class="nav-pill">Contacto</a>
+</nav>
 
-<div class="section">
-  <div class="overlay"></div>
-  <h2 class="section-title">Cómo pienso</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>¿Qué aprendí?</h3>
-      <p>Arquitectura en capas, patrones de diseño y desarrollo full stack con .NET y Angular.</p>
-    </div>
-    <div class="card">
-      <h3>¿Con qué fin lo hice?</h3>
-      <p>Construir soluciones reales que demuestren criterio técnico y calidad de código.</p>
-    </div>
-    <div class="card">
-      <h3>¿Por qué lo construí?</h3>
-      <p>Para crecer como desarrollador y mostrar cómo pienso y resuelvo problemas reales.</p>
-    </div>
+<section id="hero" class="section hero">
+  <div class="overlay overlay-hero"></div>
+  <div class="section-content">
+    <h1>Mateo Blanco</h1>
+    <p class="subtitle">Software Engineering Student</p>
   </div>
-</div>
+</section>
+
+<section id="sobre-mi" class="section-dark">
+  <div class="section-content">
+
+    <h2 class="section-title">Cómo pienso</h2>
+    <p class="section-subtitle">Transformar ideas en productos reales.</p>
+    <div class="accordion-gallery">
+
+      <div class="accordion-panel" [class.active]="activePanel === 0"
+           (mouseenter)="activePanel = 0" (mouseleave)="activePanel = -1">
+        <div class="panel-collapsed-title">¿Con qué fin desarrollo?</div>
+        <div class="panel-content">
+          <h3>¿Con qué fin estoy desarrollando?</h3>
+          <p>Lo importante no es el stack. Antes de arrancar, intento entender qué problema estoy resolviendo, para quién, y qué valor real tiene construirlo.
+            Esa forma de pensar la llevo a cada proyecto, académico o personal.</p>
+        </div>
+      </div>
+
+      <div class="accordion-panel" [class.active]="activePanel === 1"
+           (mouseenter)="activePanel = 1" (mouseleave)="activePanel = -1">
+        <div class="panel-collapsed-title">¿Qué aprendí en el camino?</div>
+        <div class="panel-content">
+          <h3>¿Qué aprendí en el camino?</h3>
+          <p>En ORT aprendí arquitectura en capas, patrones como Repository y State Pattern, SOLID, Clean Code, testing con MSTest, y desarrollo full stack con .NET y Angular.
+            En particular, aprendí a tomar decisiones técnicas y poder justificarlas.</p>
+        </div>
+      </div>
+
+      <div class="accordion-panel" [class.active]="activePanel === 2"
+           (mouseenter)="activePanel = 2" (mouseleave)="activePanel = -1">
+        <div class="panel-collapsed-title">¿Cómo me organizo?</div>
+        <div class="panel-content">
+          <h3>¿Cómo me organizo?</h3>
+          <p>Trabajo y me siento cómodo con Git, separo responsabilidades desde el diseño, y pienso en el código como si otra persona lo fuera a mantener mañana.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 class="section-title">Sobre mí</h2>
+    <p class="about-text">Contenido próximamente.</p>
+
+  </div>
+</section>
+
+<section id="proyectos" class="section">
+  <div class="section-content">
+    <h2>Proyectos</h2>
+    <p>Contenido próximamente</p>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <div class="section-content">
+    <h2>Contacto</h2>
+    <p>Contenido próximamente</p>
+  </div>
+</section>
