@@ -1,13 +1,29 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: url('/assets/images/desk-background.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .overlay {
@@ -38,6 +54,8 @@ h1 {
 }
 
 .cards {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 1.5rem;
   justify-content: center;
