@@ -600,6 +600,13 @@
   letter-spacing: 1px;
 }
 
+.exp-date-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #22c55e;
+}
+
 .exp-right {
   p {
     font-size: 1rem;
