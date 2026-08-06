@@ -11,6 +11,11 @@ export class HomeComponent implements OnInit {
   activeSection: string = 'hero';
 
   ngOnInit() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {
