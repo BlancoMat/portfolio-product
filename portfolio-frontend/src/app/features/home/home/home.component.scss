@@ -58,6 +58,25 @@
   }
 }
 
+.cv-button {
+  margin-left: 1.5rem;
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.25s ease, border-color 0.25s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.60);
+  }
+}
+
 .section {
   position: relative;
   min-height: 100vh;
@@ -338,6 +357,10 @@
   left: 0;
   right: 0;
   padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 120px;
 }
 
 .reveal-title {
@@ -347,6 +370,10 @@
   margin: 0 0 0.75rem 0;
   line-height: 1.4;
   transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  right: 1.75rem;
 }
 
 .reveal-text {
@@ -358,13 +385,15 @@
   transform: translateY(12px);
   transition: opacity 0.35s ease 0.05s,
               transform 0.35s ease 0.05s;
+  position: absolute;
+  bottom: 4rem;
+  left: 1.75rem;
+  right: 1.75rem;
 }
 
 .stack-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
+  background: transparent;
+  border: none;
   max-width: 900px;
   margin: 1.5rem auto 0;
   padding: 2.5rem 3rem;
@@ -387,10 +416,11 @@
   column-gap: 0.5rem;
   align-items: baseline;
   padding: 0.75rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 
-  &:first-of-type {
-    border-top: none;
+  &:last-of-type {
+    border-bottom: none;
   }
 }
 
@@ -454,16 +484,35 @@
   position: relative;
   z-index: 1;
   cursor: pointer;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 
-  &:hover {
-    transform: scale(1.8);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
   }
 
   &.active-dot {
     background: #4ade80;
     border-color: #4ade80;
     box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+  }
+}
+
+.h-timeline-item:hover .h-timeline-dot {
+  transform: scale(2);
+  background: rgba(255, 255, 255, 0.60);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+
+  &.active-dot {
+    background: #4ade80;
+    box-shadow: 0 0 16px rgba(74, 222, 128, 0.50);
   }
 }
 
@@ -558,6 +607,204 @@
     line-height: 1.8;
     margin: 0;
     text-align: left;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 3rem auto 0;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255,255,255,0.16);
+    transform: translateY(-3px);
+
+    .mockup-back img,
+    .mockup-front img {
+      transform: scale(1.04);
+      filter: brightness(1.12);
+    }
+  }
+}
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 0;
+  gap: 1rem;
+}
+
+.project-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-chip {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.70);
+}
+
+.project-btn {
+  flex-shrink: 0;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.30);
+  color: white;
+  font-size: 0.80rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.55);
+  }
+}
+
+.project-info {
+  padding: 1rem 1.5rem 1.25rem;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin: 0 0 0.75rem;
+}
+
+.project-type {
+  font-size: 1rem;
+  color: #728e7c;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.project-mockup {
+  position: relative;
+  height: 240px;
+  margin: 0.5rem 1.5rem 1.5rem;
+}
+
+.mockup-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 78%;
+  height: 88%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.9);
+  }
+}
+
+.mockup-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 68%;
+  height: 80%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+  border: 2px solid rgba(255,255,255,0.08);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.9);
+  }
+}
+
+.project-mockup-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  margin: 0.5rem 1.5rem 1.5rem;
+  height: 240px;
+
+  span {
+    color: rgba(255,255,255,0.20);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.project-coming {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.projects-all {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.all-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.see-all-btn {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: transparent;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.25s ease,
+              border-color 0.25s ease,
+              transform 0.2s ease;
+
+  &:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.50);
+    transform: translateY(-2px);
   }
 }
 

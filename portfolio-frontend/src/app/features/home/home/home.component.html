@@ -5,6 +5,11 @@
     <a href="#proyectos" class="nav-link" [class.active]="activeSection === 'proyectos'">Proyectos</a>
     <a href="#experiencia" class="nav-link" [class.active]="activeSection === 'experiencia'">Experiencia</a>
     <a href="#contacto" class="nav-link" [class.active]="activeSection === 'contacto'">Contacto</a>
+    <a href="/assets/cv/cvMateoBlanco.pdf"
+       download="CV-Mateo-Blanco.pdf"
+       class="cv-button">
+      Descargar CV
+    </a>
   </div>
 </nav>
 
@@ -148,10 +153,99 @@
   </div>
 </section>
 
-<section id="proyectos" class="section">
+<section id="proyectos" class="section-dark">
   <div class="section-content">
-    <h2>Proyectos seleccionados</h2>
-    <p>Contenido próximamente</p>
+
+    <h2 class="section-title">Todos mis trabajos</h2>
+
+    <div class="projects-grid">
+
+      <!-- PROYECTO 1 — DarkKitchen -->
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-chips">
+            <span class="project-chip">C#</span>
+            <span class="project-chip">.NET 8</span>
+            <span class="project-chip">Angular</span>
+            <span class="project-chip">SQL Server</span>
+          </div>
+          <a href="https://github.com/BlancoMat/327396_230508_302851"
+             target="_blank" class="project-btn">Ver más</a>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">DarkKitchen</h3>
+          <p class="project-desc">Sistema de gestión de pedidos
+          para una dark kitchen. API REST con .NET 8, frontend
+          en Angular, autenticación JWT y tres roles de usuario.</p>
+          <span class="project-type">Full Stack</span>
+        </div>
+        <div class="project-mockup">
+          <div class="mockup-back">
+            <img src="/assets/images/darkkitchen-2.PNG"
+                 alt="DarkKitchen dashboard"/>
+          </div>
+          <div class="mockup-front">
+            <img src="/assets/images/darkkitchen-1.PNG"
+                 alt="DarkKitchen login"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROYECTO 2 — Portfolio -->
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-chips">
+            <span class="project-chip">Angular</span>
+            <span class="project-chip">TypeScript</span>
+            <span class="project-chip">SCSS</span>
+          </div>
+          <a href="https://github.com/BlancoMat/portfolio-product"
+             target="_blank" class="project-btn">Ver más</a>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Portfolio Personal</h3>
+          <p class="project-desc">Este portfolio lo pensé de cero. Fuí tomando decisiones de las secciones, colores. Cada elemento tiene un razón.
+            Utilice el stack de mi ultimo proyecto académico para demostrar que sé integrarlo.</p>
+          <span class="project-type">Frontend</span>
+        </div>
+        <div class="project-mockup">
+          <div class="mockup-back">
+            <img src="/assets/images/portfolio_2.jpg"
+                 alt="Portfolio fondo"/>
+          </div>
+          <div class="mockup-front">
+            <img src="/assets/images/portfolio_1.PNG"
+                 alt="Portfolio inicio"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROYECTO 3 — Próximamente -->
+      <div class="project-card project-coming">
+        <div class="project-top">
+          <div class="project-chips">
+            <span class="project-chip">Próximamente</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Nuevo Proyecto</h3>
+          <p class="project-desc">En desarrollo.
+          Próximamente disponible</p>
+          <span class="project-type">Full Stack</span>
+        </div>
+        <div class="project-mockup project-mockup-empty">
+          <span>Próximamente</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="projects-all">
+      <button class="see-all-btn" (click)="toggleProjects()">
+        {{ showAllProjects ? 'Ver menos' : 'Ver todos los proyectos' }}
+      </button>
+    </div>
+
   </div>
 </section>
 
@@ -177,13 +271,12 @@
 
       <div class="exp-card">
         <div class="exp-left">
-          <h4 class="exp-role">Proyecto personal en desarrollo</h4>
+          <h4 class="exp-role">Proyecto personal</h4>
           <span class="exp-company">Portfolio propio</span>
-          <span class="exp-date">Hoy</span>
+          <span class="exp-date">2026</span>
         </div>
         <div class="exp-right">
-          <p>Estoy construyendo este mismo portfolio como proyecto personal:
-          diseño, arquitectura y desarrollo full stack con Angular 19.</p>
+          <p>Este portfolio que estas leyendo lo construí como un proyecto personal: pensando en el diseño, la arquitectura y desarrollandolo full stack con Angular.</p>
         </div>
       </div>
 

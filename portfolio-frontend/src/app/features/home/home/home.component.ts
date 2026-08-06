@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   activeSection: string = 'hero';
+  showAllProjects: boolean = false;
+
+  toggleProjects() {
+    this.showAllProjects = !this.showAllProjects;
+  }
 
   ngOnInit() {
     if ('scrollRestoration' in history) {
