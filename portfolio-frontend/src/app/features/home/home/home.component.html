@@ -72,34 +72,46 @@
 
     <p class="section-subtitle">Transformar ideas en productos reales.</p>
 
-    <div class="accordion-gallery">
+    <div class="reveal-grid">
 
-      <div class="accordion-panel" [class.active]="activePanel === 0"
-           (mouseenter)="activePanel = 0" (mouseleave)="activePanel = -1">
-        <div class="panel-collapsed-title">¿Con qué fin desarrollo?</div>
-        <div class="panel-content">
-          <h3>¿Con qué fin estoy desarrollando?</h3>
-          <p>Lo importante no es el stack. Antes de arrancar, intento entender qué problema estoy resolviendo, para quién, y qué valor real tiene construirlo.
-            Esa forma de pensar la llevo a cada proyecto, académico o personal.</p>
+      <div class="reveal-card">
+        <div class="reveal-bg"
+             style="background-image: url('/assets/images/bento-1.jpg')">
+        </div>
+        <div class="reveal-overlay"></div>
+        <div class="reveal-content">
+          <h3 class="reveal-title">¿Con qué fin desarrollo?</h3>
+          <p class="reveal-text">Lo importante no es el stack. Antes de arrancar,
+          intento entender qué problema estoy resolviendo, para quién, y qué
+          valor real tiene construirlo. Esa forma de pensar la llevo a cada
+          proyecto, académico o personal.</p>
         </div>
       </div>
 
-      <div class="accordion-panel" [class.active]="activePanel === 1"
-           (mouseenter)="activePanel = 1" (mouseleave)="activePanel = -1">
-        <div class="panel-collapsed-title">¿Qué aprendí en el camino?</div>
-        <div class="panel-content">
-          <h3>¿Qué aprendí en el camino?</h3>
-          <p>En ORT aprendí arquitectura en capas, patrones de diseño como Repository y State Pattern, SOLID, Clean Code, testing con MSTest, y desarrollo full stack con .NET y Angular.
-            En particular, aprendí a tomar decisiones técnicas y poder justificarlas.</p>
+      <div class="reveal-card">
+        <div class="reveal-bg"
+             style="background-image: url('/assets/images/bento-2.jpg')">
+        </div>
+        <div class="reveal-overlay"></div>
+        <div class="reveal-content">
+          <h3 class="reveal-title">¿Qué aprendí en el camino?</h3>
+          <p class="reveal-text">En ORT aprendí arquitectura en capas, patrones de
+          diseño como Repository y State Pattern, SOLID, Clean Code, testing con
+          MSTest, y desarrollo full stack con .NET y Angular. En particular,
+          aprendí a tomar decisiones técnicas y poder justificarlas.</p>
         </div>
       </div>
 
-      <div class="accordion-panel" [class.active]="activePanel === 2"
-           (mouseenter)="activePanel = 2" (mouseleave)="activePanel = -1">
-        <div class="panel-collapsed-title">¿Cómo me organizo?</div>
-        <div class="panel-content">
-          <h3>¿Cómo me organizo?</h3>
-          <p>Trabajo y me siento cómodo con Git, separo responsabilidades desde el diseño, y pienso en el código como si otra persona lo fuera a mantener mañana.</p>
+      <div class="reveal-card">
+        <div class="reveal-bg"
+             style="background-image: url('/assets/images/bento-3.jpg')">
+        </div>
+        <div class="reveal-overlay"></div>
+        <div class="reveal-content">
+          <h3 class="reveal-title">¿Cómo me organizo?</h3>
+          <p class="reveal-text">Trabajo y me siento cómodo con Git, separo
+          responsabilidades desde el diseño, y pienso en el código como si
+          otra persona lo fuera a mantener mañana.</p>
         </div>
       </div>
 
@@ -160,6 +172,18 @@
           <p>Restablezco y preparo equipos de telecomunicaciones,
           asegurando su correcta configuración y disponibilidad
           para nuevos clientes.</p>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-left">
+          <h4 class="exp-role">Proyecto personal en desarrollo</h4>
+          <span class="exp-company">Portfolio propio</span>
+          <span class="exp-date">Hoy</span>
+        </div>
+        <div class="exp-right">
+          <p>Estoy construyendo este mismo portfolio como proyecto personal:
+          diseño, arquitectura y desarrollo full stack con Angular 19.</p>
         </div>
       </div>
 

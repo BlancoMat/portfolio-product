@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-  activePanel: number = -1;
   activeSection: string = 'hero';
 
   ngOnInit() {

@@ -276,77 +276,88 @@
   }
 }
 
-.accordion-gallery {
-  display: flex;
-  gap: 1rem;
-  height: 220px;
+.reveal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 960px;
+  margin: 2.5rem auto 0;
 }
 
-.accordion-panel {
-  flex: 1;
+.reveal-card {
+  position: relative;
+  height: 380px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
   overflow: hidden;
   cursor: pointer;
-  transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.3s ease, transform 0.3s ease;
 
-  &.active {
-    flex: 4;
+  &:hover {
+    border-color: rgba(255,255,255,0.18);
+    transform: translateY(-4px);
 
-    .panel-collapsed-title {
-      opacity: 0;
+    .reveal-overlay {
+      background: rgba(0,0,0,0.72);
     }
 
-    .panel-content {
+    .reveal-text {
       opacity: 1;
       transform: translateY(0);
     }
-  }
 
-  .panel-collapsed-title {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    white-space: normal;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .panel-content {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
-    padding: 1.75rem;
-    text-align: left;
-    color: white;
-    overflow-y: auto;
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: white;
-    }
-
-    p {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.85);
+    .reveal-title {
+      transform: translateY(-8px);
     }
   }
+}
+
+.reveal-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+
+  .reveal-card:hover & {
+    transform: scale(1.04);
+  }
+}
+
+.reveal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  transition: background 0.4s ease;
+}
+
+.reveal-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.75rem;
+}
+
+.reveal-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+  transition: transform 0.3s ease;
+}
+
+.reveal-text {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease 0.05s,
+              transform 0.35s ease 0.05s;
 }
 
 .stack-card {
@@ -442,6 +453,12 @@
   margin: 0 auto 1rem;
   position: relative;
   z-index: 1;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+
+  &:hover {
+    transform: scale(1.8);
+  }
 
   &.active-dot {
     background: #4ade80;
@@ -518,9 +535,6 @@
   margin: 0 0 0.5rem;
 }
 
-.exp-card:first-child .exp-role {
-  color: #728e7c;
-}
 
 .exp-company {
   font-size: 0.88rem;
