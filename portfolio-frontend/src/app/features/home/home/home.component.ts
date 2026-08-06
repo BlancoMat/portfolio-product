@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       }
 
       // detectar sección activa
-      const sections = ['hero', 'sobre-mi', 'proyectos', 'contacto'];
+      const sections = ['hero', 'sobre-mi', 'proyectos', 'experiencia', 'contacto'];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {

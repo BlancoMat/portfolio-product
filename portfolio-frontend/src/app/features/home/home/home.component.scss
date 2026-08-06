@@ -152,8 +152,8 @@
 
 .section-dark {
   background:
-    radial-gradient(circle at 12% 18%, rgba(229, 176, 86, 0.07), transparent 45%),
-    radial-gradient(circle at 88% 82%, rgba(88, 166, 255, 0.06), transparent 40%),
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.05), transparent 45%),
+    radial-gradient(circle at 88% 82%, rgba(255, 255, 255, 0.035), transparent 40%),
     #0d1117;
   min-height: 100vh;
   display: flex;
@@ -169,7 +169,7 @@
 
   .section-kicker {
     display: block;
-    color: rgba(229, 176, 86, 0.85);
+    color: rgba(255, 255, 255, 0.85);
     letter-spacing: 2px;
     font-size: 1.5rem;
     font-weight: 600;
@@ -177,7 +177,7 @@
   }
 
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: white;
     margin-bottom: 0.5rem;
@@ -193,7 +193,7 @@
   .divider {
     width: 60px;
     height: 2px;
-    background: rgba(229, 176, 86, 0.35);
+    background: rgba(255, 255, 255, 0.15);
     margin: 5rem auto;
   }
 
@@ -203,7 +203,8 @@
     align-items: flex-start;
     gap: 3rem;
     text-align: left;
-    margin-top: 2.5rem;
+    max-width: 900px;
+    margin: 2.5rem auto 0;
   }
 
   .about-photo {
@@ -211,9 +212,9 @@
     width: 240px;
     height: 240px;
     border-radius: 20px;
-    background: linear-gradient(145deg, rgba(229, 176, 86, 0.15), rgba(255, 255, 255, 0.03));
-    border: 1px solid rgba(229, 176, 86, 0.35);
-    box-shadow: 0 0 50px rgba(229, 176, 86, 0.08);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,7 +224,7 @@
     font-family: Cambria, Cochin, Georgia, 'Times New Roman', serif;
     font-size: 3.5rem;
     font-weight: 700;
-    color: rgba(229, 176, 86, 0.6);
+    color: rgba(255, 255, 255, 0.5);
   }
 
   .about-text-block {
@@ -263,7 +264,7 @@
   justify-content: center;
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: white;
     text-align: center;
@@ -280,6 +281,8 @@
   gap: 1rem;
   height: 220px;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .accordion-panel {
@@ -345,3 +348,148 @@
     }
   }
 }
+
+.education-timeline {
+  margin: 4rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeline-horizontal {
+  display: flex;
+  position: relative;
+  padding-top: 2rem;
+}
+
+.timeline-horizontal::before {
+  content: '';
+  position: absolute;
+  top: calc(2rem + 4px);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.h-timeline-item {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  padding: 0 0.75rem;
+}
+
+.h-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  margin: 0 auto 1rem;
+  position: relative;
+  z-index: 1;
+
+  &.active-dot {
+    background: #4ade80;
+    border-color: #4ade80;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+  }
+}
+
+.h-timeline-date {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.h-timeline-item h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.h-timeline-item:last-child h4 {
+  color: #728e7c;
+}
+
+.h-timeline-item p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.50);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.exp-grid {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  align-items: start;
+
+  &:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+.exp-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.exp-role {
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 700;
+  color: #728e7c;
+  margin: 0 0 0.5rem;
+}
+
+.exp-card:first-child .exp-role {
+  color: #728e7c;
+}
+
+.exp-company {
+  font-size: 0.88rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.exp-date {
+  font-size: 0.78rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.exp-right {
+  p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin: 0;
+    text-align: left;
+  }
+}
+
