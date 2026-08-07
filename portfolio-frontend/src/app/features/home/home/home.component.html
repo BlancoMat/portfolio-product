@@ -252,21 +252,31 @@
         </div>
       </div>
 
-      <!-- PROYECTO 4 — Próximamente -->
-      <div class="project-card project-coming">
+      <!-- PROYECTO 4 — AgendaPro -->
+      <div class="project-card">
         <div class="project-top">
           <div class="project-chips">
-            <span class="project-chip">Próximamente</span>
+            <span class="project-chip">HTML</span>
+            <span class="project-chip">CSS</span>
+            <span class="project-chip">JS</span>
           </div>
+          <a href="https://agenda-pro-broadsheet.vercel.app/AgendaPro.dc.html"
+             target="_blank" class="project-btn">Ver más</a>
         </div>
         <div class="project-info">
-          <h3 class="project-title">Nuevo Proyecto</h3>
-          <p class="project-desc">En desarrollo.
-          Próximamente disponible</p>
-          <span class="project-type">Full Stack</span>
+          <h3 class="project-title">AgendaPro</h3>
+          <p class="project-desc">Prototipo de un SaaS de agenda online para profesionales independientes (salud, bienestar, servicios). Página pública de reserva de turnos y panel de gestión de agenda, pacientes y recordatorios automáticos. Caso de uso: nutricionista en Uruguay.</p>
+          <span class="project-type">Prototipo</span>
         </div>
-        <div class="project-mockup project-mockup-empty">
-          <span>Próximamente</span>
+        <div class="project-mockup">
+          <div class="mockup-back">
+            <img src="/assets/images/AgendaPro_2.png"
+                 alt="AgendaPro panel profesional"/>
+          </div>
+          <div class="mockup-front">
+            <img src="/assets/images/AgendaPro_1.png"
+                 alt="AgendaPro página de reserva"/>
+          </div>
         </div>
       </div>
 
@@ -343,21 +353,51 @@
       </p>
     </div>
 
-    <div class="contact-actions">
-      <a href="mailto:mateoblanco457@gmail.com"
-         class="contact-btn-main">
-        <span class="btn-icon">
-          <svg xmlns="http://www.w3.org/2000/svg"
-               width="18" height="18" viewBox="0 0 24 24"
-               fill="none" stroke="currentColor"
-               stroke-width="1.5" stroke-linecap="round"
-               stroke-linejoin="round">
-            <rect width="20" height="16" x="2" y="4" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitContact()" *ngIf="contactStatus !== 'sent'">
+      <div class="form-row">
+        <div class="form-field">
+          <input type="text" formControlName="nombre" placeholder="Tu nombre" />
+          <span class="form-error" *ngIf="contactForm.get('nombre')!.invalid && contactForm.get('nombre')!.touched">
+            Ingresá tu nombre.
+          </span>
+        </div>
+        <div class="form-field">
+          <input type="email" formControlName="email" placeholder="Tu email" />
+          <span class="form-error" *ngIf="contactForm.get('email')!.invalid && contactForm.get('email')!.touched">
+            Ingresá un email válido.
+          </span>
+        </div>
+      </div>
+      <div class="form-field">
+        <textarea formControlName="mensaje" rows="4" placeholder="Contame sobre tu proyecto..."></textarea>
+        <span class="form-error" *ngIf="contactForm.get('mensaje')!.invalid && contactForm.get('mensaje')!.touched">
+          Contame un poco más (mínimo 10 caracteres).
         </span>
-        Mandar correo
-      </a>
+      </div>
+
+      <div class="contact-actions">
+        <button type="submit" class="contact-btn-main" [disabled]="contactStatus === 'sending'">
+          <span class="btn-icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="18" height="18" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.5" stroke-linecap="round"
+                 stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </span>
+          {{ contactStatus === 'sending' ? 'Enviando...' : 'Enviar mensaje' }}
+        </button>
+        <span class="form-error" *ngIf="contactStatus === 'error'">
+          Algo falló al enviar. Probá de nuevo o escribime directo a
+          <a href="mailto:mateoblanco457@gmail.com">mateoblanco457&#64;gmail.com</a>.
+        </span>
+      </div>
+    </form>
+
+    <div class="contact-sent" *ngIf="contactStatus === 'sent'">
+      ¡Gracias! Tu mensaje llegó. Te respondo a la brevedad.
     </div>
 
   </div>
